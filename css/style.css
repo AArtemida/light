@@ -21,11 +21,12 @@
 			border: 1px dotted #FFF;
 			width:65px;
 			height:65px;
-			position: fixed;
-			top: 120px;
+			position: absolute;
+			/*top: 120px;*/
 			text-align: center;
 			line-height: 65px;
-			right:315px;
+			bottom:0;
+			/*right:315px;*/
 		}
 		.circle:after{
 			content:'';
@@ -38,3 +39,47 @@
 			right: -18px;
     		top: 50%;
 		}
+		#day{
+			position: absolute;
+    		right: 315px;
+    		top:120px;
+    		width:67px;
+		}
+		article{
+			position: relative;
+		    height: 100%;
+		    width: 100%;
+		}
+		header{
+			background: #030656;
+			color: #fff;
+			height: 20px;
+			opacity:.9;
+			position: fixed;
+			width: 100%;
+    		z-index: 100;
+		}
+		#svgForStroke{position: fixed;top: 100px;left: 30px;}
+		path {
+		  stroke-dasharray: 1000;
+		  stroke-dashoffset: 1000;
+		  animation: dash 5s linear infinite;
+		}
+
+		@-webkit-keyframes dash {
+		  to {
+		    stroke-dashoffset: 0;
+		  }
+		}
+		@keyframes dash {
+		  to {
+		    stroke-dashoffset: 0;
+		  }
+		}
+		.fixed{position: fixed;}
+		.milu{right:100%;top:40%;}
+		.jingyu{left: 100%; bottom: 20%;}
+		.konglong{left: 25%; bottom: 100%;}
+		.pangxie{right: 100%; top: 83%;}
+		.tuzi{left: 50%; top: 100%;}
+		.banma{left: 100%; top: 20%;}

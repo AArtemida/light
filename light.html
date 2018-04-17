@@ -8,17 +8,94 @@
 </head>
 <body data-0="background-image:linear-gradient(0deg, hsl(348, 79%, 86%), hsl(7, 84%, 86%));" 
 data-162866="background-image:linear-gradient(3600deg, hsl(15, 77%, 86%), hsl(348, 79%, 86%));">
-		<div class="timeline"></div>
-		<div class="circle">
-			circle
-		</div>
+<!--仿alightyear背景-->
+		<article>
+			<!--图片来自iconfont-->
+			<header></header>
+			<div class="timeline"></div>
+			<div id="day"><div class="circle">
+				circle
+			</div></div>
+			<!-- <svg id="svgForStroke"  width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+			 <g>
+			 <path d="M20,20 C90,40 130,40 180,20" stroke="#000000" fill="none" style="stroke-width: 2px;"></path>
+			  <defs>
+			    <linearGradient id="orange_red" x1="0%" y1="0%" x2="100%" y2="0%">
+			    <stop offset="0%" style="stop-color:rgb(255,255,0);
+			    stop-opacity:1"/>
+			    <stop offset="100%" style="stop-color:rgb(255,0,0);
+			    stop-opacity:1"/>
+			    </linearGradient>
+			    </defs>
+			    <path d="M0,0 L240,0 L240,240 L0,240 Z" fill="none" stroke="url(#orange_red)" stroke-width="10" transform="translate(5,5)"></path>
+			 </g></svg> -->
+			 <div class="fixed milu" data-14900="right:100%;top:40%;" data-19600="right:-80%;">
+			 	<img src="img/milu.png">
+			 </div>
+			 <div class="fixed jingyu" data-38900="left:100%;bottom:20%;" data-47600="left:-80%;">
+			 	<img src="img/jingyu.png">
+			 </div>
+			 <div class="fixed konglong" data-50686="left:25%;bottom:100%;" data-52100="left:20%;bottom:-40%;">
+			 	<img src="img/konglong.png">
+			 </div>
+			 <div class="fixed pangxie" data-63900="right:100%;top:83%;" data-69600="right:-80%;top:0%;">
+			 	<img src="img/pangxie.png">
+			 </div>
+			 <div class="fixed tuzi" data-80686="left:50%;top:100%;" data-85100="top:-40%;">
+			 	<img src="img/tuzi.png">
+			 </div>
+			 <div class="fixed banma" data-99900="left:100%;top:20%;" data-104600="left:-80%;">
+			 	<img src="img/banma.png">
+			 </div>
+		</article>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/skrollr.min.js"></script><!--视差滚动-->
 	<script type="text/javascript">
     	var s = skrollr.init();
     </script>
 	<script type="text/javascript">
+		$(function(){
+		function getScrollTop() {
+			var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
+			if (document.body) {
+				bodyScrollTop = document.body.scrollTop;
+			}
+			if (document.documentElement) {
+				documentScrollTop = document.documentElement.scrollTop;
+			}
+			scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop
+					: documentScrollTop;
+			flyTop=scrollTop;
+			return scrollTop;
+		}
+		// function scroll() {
+		// 	var scrollHeight = Math.ceil(getScrollTop());
+		// 	 $(".circle").css({
+		// 	  "top":parseInt(scrollHeight)+120,
+		// 	});
+		// }
+		// window.addEventListener('scroll', scroll);
+		$(window).scroll(function(){
+			var perc = Math.max(0, Math.min(1, $(window).scrollTop()/($('body').height()-$(window).height())));
+			$('#day').css({height : perc*100 + '%'});
 
+		    if ($(window).scrollTop() < 51218) {
+		       $('#day').css({top : 158 + 'px'});
+		    }
+
+		    else if ($(window).scrollTop() < 71218) {
+		       $('#day').css({top : 108 + 'px'});
+		    }
+
+		    else if ($(window).scrollTop() < 91218) {
+		       $('#day').css({top : 58 + 'px'});
+		    }
+
+		    else {
+		       $('#day').css({top : 0});
+		    }
+		});
+		})
 	</script>
 </body>
 </html>
